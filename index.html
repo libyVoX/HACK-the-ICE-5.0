@@ -16,25 +16,58 @@
 			<img onclick="location.href='https://tpykt.ru/it-park/';" class="position-absolute start-50 translate-middle" src="itpark.svg" style="height: 6%; top: 4%;">
 		</div>
 		<div style="height: 92%;">
-			<div class="firstf" data-site3d="2623,height=100%" style=""></div>
-			<div class="secondf d-none" data-site3d="2623,height=100%"></div>
-			<div class="thirdf d-none" data-site3d="2623,height=100%"></div>
-			<div class="fourthf d-none" data-site3d="2623,height=100%"></div>
-			<div class="fifthf d-none" data-site3d="2623,height=100%"></div>
+			<div class="firstm" data-site3d="2623,height=100%" style=""></div>
+			<div class="secondm d-none" data-site3d="2626,height=100%"></div>
 		</div>
 	</div>
 	<div style="left: 95%; top: 30%;" class="position-absolute top-50 translate-middle flrs-btn">
-		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-circle">1</button>
-		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-circle my-3">2</button>
+		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-circle firstf">1</button>
+		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-circle my-3 secondf">2</button>
 		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-circle">3</button>
 		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-circle my-3">4</button>
 		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-circle">5</button>
-
-		<button style="background: #CDBDB2; width: 60px; height: 60px;" class="btn rounded-3 my-5">2D</button>
 	</div>
 
 	<script id="site3d-configurator-load" src="https://site3d.site/configurator/load.js?time=1700702130687" data-lang="ru"></script>
+	<script id="site3d-configurator-load" src="https://site3d.site/configurator/load.js?time=1700729401990" data-lang="ru"></script>
 
-	<script src="script.js"></script>
+	<script>
+		let hgt = document.querySelector('.visota-px');
+		let first = document.querySelector('.firstf');
+		let second = document.querySelector('.secondf');
+		let firstm = document.querySelector('.firstm');
+		let secondm = document.querySelector('.secondm');
+		let which = firstm
+
+		first.onClick = function(){
+			alert()
+			which.classList.remove("d-block");
+			which.classList.add("d-none");
+			firstm.classList.remove("d-none");
+			firstm.classList.add("d-block");
+			which = firstm
+		};
+		second.onClick = function(){
+			alert()
+			which.classList.remove("d-block");
+			which.classList.add("d-none");
+			secondm.classList.remove("d-none");
+			secondm.classList.add("d-block");
+			which = secondm
+		};
+
+		function hgtch(){
+			hgt.style.height = document.documentElement.clientHeight + 'px'
+			hgt.style.width = document.documentElement.clientWidth + 'px'
+			if(document.documentElement.clientWidth < 768){
+				document.querySelector('.per-main').style.display = "none"
+				document.querySelector('.flrs-btn').style.left = '85%'
+			}else{
+				document.querySelector('.per-main').style.display = "block"
+				document.querySelector('.flrs-btn').style.left = '95%'
+			}
+		}
+		setInterval(hgtch, 1)
+	</script>
 </body>
 </html>

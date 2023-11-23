@@ -7,28 +7,40 @@ let fifth = document.querySelector('.fifthf');
 let which = first
 
 first.onClick = function(){
+	which.classList.remove("d-block");
 	which.classList.add("d-none");
-	first.classList.remove("d-block");
+	first.classList.remove("d-none");
+	first.classList.add("d-block");
 	which = first
+	alert()
 };
 second.onClick = function(){
+	which.classList.remove("d-block");
 	which.classList.add("d-none");
-	first.classList.remove("d-block");
+	second.classList.remove("d-none");
+	second.classList.add("d-block");
 	which = second
+	alert()
 };
 third.onClick = function(){
+	which.classList.remove("d-block");
 	which.classList.add("d-none");
-	first.classList.remove("d-block");
+	third.classList.remove("d-none");
+	third.classList.add("d-block");
 	which = third
 };
 fourth.onClick = function(){
+	which.classList.remove("d-block");
 	which.classList.add("d-none");
-	first.classList.remove("d-block");
+	fourth.classList.remove("d-none");
+	fourth.classList.add("d-block");
 	which = fourth
 };
 fifth.onClick = function(){
+	which.classList.remove("d-block");
 	which.classList.add("d-none");
-	first.classList.remove("d-block");
+	fifth.classList.remove("d-none");
+	fifth.classList.add("d-block");
 	which = fifth
 };
 
