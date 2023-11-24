@@ -10,7 +10,10 @@
 <body>
 	<div class="visota-px" style="">
 		<div class="bg-secondary w-100 d-flex" style="height: 8%;">
-			<button onclick="location.href='https://tpykt.ru/it-park/';" class="btn my-auto rounded-3 per-main" style="background: #CDBDB2; height: 60%; width: 15%; margin-left: 15%;">
+			<button class="infoprint border-0 bg-transparent mx-4">
+				<img src="menu.svg" style="height: 50%;">
+			</button>
+			<button onclick="location.href='https://tpykt.ru/it-park/';" class="btn my-auto rounded-3 per-main" style="background: #CDBDB2; height: 60%; width: 15%; margin-left: 10%;">
 				На главную
 			</button>
 			<img onclick="location.href='https://tpykt.ru/it-park/';" class="position-absolute start-50 translate-middle" src="itpark.svg" style="height: 6%; top: 4%;">
@@ -18,6 +21,16 @@
 		<div style="height: 92%;">
 			<div class="firstm d-block" data-site3d="2623,height=100%" style=""></div>
 			<div class="secondm d-none" data-site3d="2626,height=100%"></div>
+		</div>
+		<div class="testingthink position-absolute col-4 h-75 d-none rounded-5" style="top: 10%; left: 2%; background: url(idea-coffee.jpg) no-repeat; background-size: 100% 100%; ">
+			<div class="w-100 bg-white rounded-bottom-5 h-50 position-absolute" style="bottom: 0;">
+				<p style="font-size: 1.3vw;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
 		</div>
 	</div>
 	<div style="left: 95%; top: 30%;" class="position-absolute top-50 translate-middle flrs-btn">
@@ -37,7 +50,9 @@
 		let second = document.querySelector('.secondf');
 		let firstm = document.querySelector('.firstm');
 		let secondm = document.querySelector('.secondm');
+		let info_print = document.querySelector('.infoprint')
 		let which = firstm
+		let ghghgh = 1
 
 		first.onclick = function(){
 			which.classList.remove("d-block");
@@ -54,15 +69,33 @@
 			which = secondm
 		};
 
+		info_print.onclick = function(){
+			ghghgh += 1
+		}
+		
+		
+
 		function hgtch(){
 			hgt.style.height = document.documentElement.clientHeight + 'px'
 			hgt.style.width = document.documentElement.clientWidth + 'px'
 			if(document.documentElement.clientWidth < 768){
 				document.querySelector('.per-main').style.display = "none"
 				document.querySelector('.flrs-btn').style.left = '85%'
+
 			}else{
 				document.querySelector('.per-main').style.display = "block"
 				document.querySelector('.flrs-btn').style.left = '95%'
+			}
+			try{
+				var tip_selector = document.querySelector(".site3dWidget__select")
+				var tipnum = tip_selector.value
+				if(tipnum == 1 && ghghgh % 2 == 0){
+					document.querySelector(".testingthink").classList.remove('d-none')
+				}else{
+					document.querySelector(".testingthink").classList.add('d-none')
+				}
+			}catch{
+				console.log("no")
 			}
 		}
 		setInterval(hgtch, 1)
